@@ -19,8 +19,8 @@ AWS EC2 Ubuntu Server
 ---
 
 ## 🔗 Linked Source Repositories
-* **Flask Backend:** `https://github.com`
-* **Express Frontend:** `https://github.com`
+* **Flask Backend:** `https://github.com/PriyanshuSaxenaPS/DevOps-Flask-Backend`
+* **Express Frontend:** `https://github.com/PriyanshuSaxenaPS/DevOps-Express-Frontend`
 
 ---
 
