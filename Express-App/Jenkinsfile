@@ -1,0 +1,49 @@
+pipeline {
+    agent any
+
+    stages {
+
+        stage('Checkout') {
+            steps {
+                echo 'Source code checked out by Jenkins SCM'
+            }
+        }
+
+        stage('Install Dependencies') {
+            steps {
+                sh 'npm install'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                echo 'Building Express application'
+                sh 'node --check app.js'
+                sh 'node --check server.js'
+            }
+        }
+
+        stage('Run Tests') {
+            steps {
+                sh 'npm test'
+            }
+        }
+
+        stage('Deploy Express') {
+            steps {
+                echo 'Deploying Express application'
+                sh 'npm start'
+            }
+        }
+    }
+
+    post {
+        success {
+            echo 'Express pipeline completed successfully!'
+        }
+
+        failure {
+            echo 'Express pipeline failed!'
+        }
+    }
+}
